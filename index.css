@@ -104,7 +104,6 @@ body{
 }
 
 .heroText{    
-    text-transform: capitalize;
     font-size: 3rem;
     font-family:Arial, Helvetica, sans-serif;   
     padding-right:700px;
@@ -335,10 +334,10 @@ body{
 }
 
 .skill-info{
-    padding-left:50px;
-    padding-bottom:10px;
+    position:relative;
     font-size:1.3rem;  
 }
+
 
 .prof{
     font-size:2rem;
