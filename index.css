@@ -1,6 +1,7 @@
 *{
     padding:0;
     margin:0;
+    font-family: "Inter", sans-serif;
 }
 
 html {
@@ -46,7 +47,6 @@ body{
     height: 100%;
     align-items: center;
     text-transform:capitalize;
-    font-family:Arial, Helvetica, sans-serif; 
     color:rgb(226, 226, 226);
 
 
@@ -80,11 +80,11 @@ body{
     position:absolute;
     z-index:6;
     top: 30px;
-    right: 10px;
+    right: -30px;
     height: 100%;
     opacity: 1;
     border-radius:1rem;
-    scale:0.8;
+    scale:0.6;
     filter: grayscale(100%);
     transition: 1s;
 }
@@ -101,11 +101,11 @@ body{
 
 .heroImg:hover{
     filter: grayscale(0%);
+    scale:0.7;
 }
 
 .heroText{    
     font-size: 3rem;
-    font-family:Arial, Helvetica, sans-serif;   
     padding-right:700px;
     padding-left:100px;
     
@@ -136,69 +136,83 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
     justify-content: center;
     opacity: 0;
     width:100%;
     z-index:-1;
+    overflow:hidden;
 }
 
 .projects-container{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    width: 90%;
-    margin: 8rem;
-}
-
-.project-card{
-    margin: 40px;
-    position:relative;
-    color: white;
-    border: 10px ridge #b4b4b4;
-    width: 85%;
     display:flex;
-
-}
-
-.projectImg{
-    object-fit:cover;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     width:100%;
 }
 
-.project-info{
+.project-card{
+    margin: 10px;
+    position:relative;
+    color: white;
+    width: 100px;
+    height:600px;
+    border-radius:2em;
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow:hidden;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    box-shadow: 0px 10px 30px -5px rgba(255, 255, 255, 0.598);
+}
+
+.project-card > .project-info{
+    display:flex;
+    text-align:center;
+}
+
+/* .project-info{
     position:absolute;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 10%;
+    margin:0;
     font-size: 1.5rem;
     color: white;
     opacity: 0;
+} */
+
+.project-card > .project-info > .project-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    height: 200px;
+    width: 300px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: 0.3s;
+    transition: all 0.3s ease;
 }
 
-.project-Heading {
-    font-size: 2rem;
-    --s: 0.1em;   /* the thickness of the line */
-    --c: rgb(255, 255, 255); /* the color */
-        
-    color: #0000;
-    padding-bottom: var(--s);
-    background: 
-        linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
-        linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
-    -webkit-background-clip: text,padding-box;
-    background-clip: text,padding-box;
-    transition: 0.5s;
+
+.project-input{
+    display:none;
 }
 
-.project-card:hover .project-Heading {
-    --_p: 100%;
+.project-input:checked + .project-card{
+    width: 600px;
 }
 
-.project-card:hover .projectImg{
-    opacity:0.3;
+.project-input:checked +.project-card >.project-info >.project-row{
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 .project-card:hover .project-info{
@@ -206,25 +220,61 @@ body{
 
 }
 
+.project-card[for="c1"]{
+    background-image: url('https://cdn.7tv.app/emote/63cec0c12ba67946677a463e/4x.webp');
+}
+.project-card[for="c2"]{
+    background-image: url('https://cdn.7tv.app/emote/618c19e5d34608492cc2a4f4/4x.webp');
+}
+.project-card[for="c3"]{
+    background-image: url('https://cdn.7tv.app/emote/645c29a0a93fbaf6fa2b5647/4x.webp');
+}
+.project-card[for="c4"]{
+    background-image: url('https://cdn.7tv.app/emote/63e74c6b15f9f80bd0c465db/4x.webp');
+}
+.project-card[for="c5"]{
+    background-image: url('https://cdn.7tv.app/emote/63f678370588a70e9a8d6da8/4x.webp');
+}
+.project-card[for="c6"]{
+    background-image: url('https://cdn.7tv.app/emote/64f003caa18105dea8751e8e/4x.webp');
+}
+.project-card[for="c7"]{
+    background-image: url('https://cdn.7tv.app/emote/6425a34b8e832b32ab453270/4x.webp');
+}
+.project-card[for="c8"]{
+    background-image: url('https://cdn.7tv.app/emote/64cba95f921be539421404c5/4x.webp');
+}
+.project-card[for="c9"]{
+    background-image: url('https://cdn.7tv.app/emote/64cd931ed3cf2f1c8cca5264/4x.webp');
+}
+.project-card[for="c10"]{
+    background-image: url('https://cdn.7tv.app/emote/6425a34b8e832b32ab453270/4x.webp');
+}
+
+
 .project-btn-grp{
     display: flex;
-    margin: 15px;
+    margin: 5px;
 }
 
 .project-btn{
     background-color:rgb(24, 24, 24);
+    border-radius: 1rem;
     color: white;
-    font-size: 1.3rem;
-    padding: 10px;
-    margin: 10px;
+    font-size: 1rem;
+    padding: 5px;
+    margin: 5px;
 }
-
-
+.project-btn:hover{
+    background-color:rgb(68, 68, 68);
+}
+.project-btn:active{
+    background-color:rgb(138, 138, 138);
+}
 
 .projectHeading{
     font-size: 5rem;
     text-decoration: underline 2px #3ab966;
-    font-family:Arial, Helvetica, sans-serif;
     padding-top:7rem;
 }
 
@@ -267,7 +317,6 @@ body{
 
 .info-content{
     font-style:italic;
-    font-family: sans-serif;
     font-size: 2.5rem;
     margin:0;
 
@@ -279,7 +328,6 @@ body{
 
 .skills{
     color:white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     align-items: center;
     display: flex;
     flex-direction: column;  
@@ -290,7 +338,6 @@ body{
     margin-top: 3%;
     margin-bottom: 2%;
     font-size: 5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: underline 2px #3ab966;
 }
 
@@ -329,7 +376,6 @@ body{
 .skill-title{
     font-size:2rem;
     text-transform:capitalize;
-    font-family:Arial, Helvetica, sans-serif;
     
 }
 
@@ -366,7 +412,6 @@ body{
   
 .EAE-heading{
     font-size: 5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: underline 2px #3ab966;
     text-transform:capitalize;
     padding-bottom:2rem;
@@ -379,7 +424,6 @@ body{
     display: flex;
     flex-direction: column;
     height: 90%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
 }
   
